@@ -1,0 +1,15 @@
+.mesa{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url("../../../public/assets/fondo-copado.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    &__button{
+        width: 5rem;
+        margin: auto
+    }
+}
