@@ -2,7 +2,6 @@ import React from 'react'
 
 const EnvidoIA = ({manoIA}) => {
     
-    console.log("bolas");
 
     const calcularEnvido = () => {
         console.log(manoIA);

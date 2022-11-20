@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./cartas.scss"
 
 
-const Carta = ({numero, palo, id, setTirada, hidden}) => {
+const Carta = ({numero, palo, id, setTirada, tirada, turno, setTurno, ronda, setRonda}) => {
     
-
+    const [usada, setUsada] = useState(false)
     let imagen
+
     switch(palo){
         case "espada": 
             imagen = ("../assets/espada.png")
@@ -21,12 +22,18 @@ const Carta = ({numero, palo, id, setTirada, hidden}) => {
             break
     }
 
-    const tirarCarta = (id) => {
-        setTirada(true)
+    const tirarCarta = (e) => {
+        if (turno) {
+            setTirada([...tirada, e.target.id])
+            setTurno(false)
+            setRonda(ronda + 1)
+            setUsada(true)
+        }
+
     }
 
   return (
-    <div className={`carta ${hidden ? "hidden" : ""}`} hidden={hidden} onDoubleClick={() => tirarCarta(id)}>
+    <div className={`carta ${tirada.map(el => el == id ? " hidden " : "") }`} id={id}  onDoubleClick={usada ? () => console.log("ya fue usada") : tirarCarta}>
         <h2 className='carta__titulo'>{numero}</h2>
         <img src={imagen} alt="carta de truco" className='carta__imagen'/>
     </div>
