@@ -14,7 +14,7 @@ const CartasIA = ({manoIA, turno, setTurno, ronda, setRonda}) => {
     manoIA.forEach(carta => {
       cartasIdIA.push(carta.id)
     });
-    cartaSeleccionada = cartasIdIA[Math.floor(Math.random()* (3))]
+    cartaSeleccionada = cartasIdIA[Math.floor(Math.random() * (3 - 1 + 1)) + 1]
   }
 
   return (

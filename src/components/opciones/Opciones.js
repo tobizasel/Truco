@@ -14,6 +14,22 @@ const Opciones = ({mano, manoIA, turno, setTurno, ronda, setRonda}) => {
       setRonda(ronda + 1)
     }
 
+    const cantarTruco = () => {
+      console.log("truco!");
+    }
+
+    const aceptar = () => {
+      console.log("Quiero!");
+    }
+
+    const rechazar = () => {
+      console.log("no quiero!");
+    }
+
+    const irse = () => {
+      console.log("me voy al mazo!");
+    }
+
 
   return (
     <div className="opciones">
@@ -21,7 +37,7 @@ const Opciones = ({mano, manoIA, turno, setTurno, ronda, setRonda}) => {
       <button className="opciones__boton" disabled={!turno} onClick={"cantarTruco"}>Truco</button>
       <button className="opciones__boton" disabled={!turno} onClick={""}>Aceptar</button>
       <button className="opciones__boton" disabled={!turno} onClick={""}>Rechazar</button>
-      <button className="opciones__boton" disabled={!turno} onClick={""}>Me voy al maso</button>
+      <button className="opciones__boton" disabled={!turno} onClick={""}>Me voy al mazo</button>
     </div>
   );
 };
